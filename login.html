@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <title>Sign In</title>
+    </head>
+
+    <div class="topnav" id="myTopnav">
+      <a href="index.html">Home</a>
+        <a href="register.html">Register</a>
+        <a href="login.html" class="active">Login</a>
+        <a href="aboutus.html">About Us</a>
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+    <head><center><h1 id = "loginTitle">Login Page</h1></center></head>
+
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+    function checkForm(form) {
+               if(form.firstname.value == "") {
+                   alert("Please fill in your username.");
+                   form.firstname.focus();
+                   return false;
+               }
+
+               if (form.lastname.value == "") {
+                   alert("Please fill in your password.");
+                   form.lastname.focus();
+                   return false;
+               }
+               return true;
+           }
+    </script>
+
+    <body>
+        <center>
+    <h3 style="color: white;">Sign in with username and password.</h3>
+        <br>
+        <div class = "container">
+          <br><br>
+                   <div id = "loginform">
+
+                       <form action="index.html" method="post" onsubmit="return checkForm(this);">
+                           <input type="text" id="firstname" name="firstname" placeholder="Enter Username...">
+                           <br><br>
+                           <input type="password" id="lastname" name="lastname" placeholder = "Enter Password..."><br>
+                           <br>
+                           <a href = "home.html"><input type ="submit" id="signinButton" value ="Submit"></a>
+                       </form>
+                   </div>
+               <br>
+               <label style="color: white;">
+
+                   Remember Me
+                 <input type="checkbox" checked="checked" name="remember" class="check">
+               </label>
+               <br><br>
+               <img src="login.png" alt="Electric car" width="200" height="190" class="loginimg">
+             </div>
+                 </center>
+    <br />
+    <div class="footer">
+      <center><p>Electric Cars Website - Jean Augustine Secondary School Students</p></center>
+    </div>
+    </body>
+
+
+
+
+
+
+
+</html>
